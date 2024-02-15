@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+      <meta charset='UTF-8'>
+      <title>Todo Manager</title>
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='style.css'>
+    </head>
+    <body>
+
+        <div class='form-container' style='width: 300px;'>
+            <form>
+                <div class='mb-3'>
+                    <label for='fname' class='form-label'>Name :</label>
+                    <input type='text' class='form-control' id='fname'>
+                </div>
+                <div class='mb-3'>
+                    <label for='fcontent' class='form-label'>Content :</label>
+                    <input type='text' class='form-control' id='fcontent'>
+                </div>
+                <button type='submit' id = 'bouton' class='btn btn-primary' onclick='addTodo()'>Add Todo</button>
+            </form>
+        </div>
+
+        <ul id = 'taskList' class= 'list-group' style='width: 300px;'></ul>
+        <script src = 'TodoManager.js'></script>
+
+    </body>
+</html>
