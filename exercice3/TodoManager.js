@@ -1,15 +1,19 @@
+const fnameValue = document.querySelector('#fname');
+const contentValue = document.querySelector('#fcontent');
+const selectButton = document.querySelector('#bouton');
+const taskList = document.querySelector('#taskList');
+
+selectButton.addEventListener('click', (e) => {
+    addTodo();
+})
+
 function addTodo() {
-
     event.preventDefault();
-
-    const fnameValue = document.getElementById('fname').value;
-    const contentValue = document.getElementById('fcontent').value;
-
-
-    if (fnameValue && contentValue) {
+    if (fnameValue.value && contentValue.value) {
         const listItem = document.createElement('li');
-        listItem.className = 'list-group-item';
-        listItem.textContent = fnameValue + ': ' + contentValue;
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = `${fnameValue.value}: ${contentValue.value}`;
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
@@ -19,9 +23,9 @@ function addTodo() {
             this.parentElement.remove();
         });
 
+        listItem.appendChild(paragraph);
         listItem.appendChild(deleteButton);
 
-        document.getElementById('taskList').appendChild(listItem);
+        taskList.appendChild(listItem);
     }
 }
-
